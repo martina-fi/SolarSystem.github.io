@@ -434,8 +434,9 @@
             setTransform(iss,issNode);
 
             // Tierra
-            mat4.rotate(earthNode, earthNode,tiempo*earthOrbit, [0, 1, 0]); // Hago que la Tierra rote sobre si misma
+            mat4.rotate(earthNode, earthNode, -tiempo ,[0, 1, 0]);    		// Corrijo la inclinación de la tierra
             mat4.rotate(earthNode, earthNode, earthAngle , [1, 0, 0]);      // Inclino 23 grados la tierra respecto su propio eje 
+            mat4.rotate(earthNode, earthNode,tiempo*earthOrbit, [0, 1, 0]); // Hago que la Tierra rote sobre si misma
             setTransform(tierra,earthNode);
 
             // *********************************************************************************************
